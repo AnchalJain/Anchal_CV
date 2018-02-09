@@ -1,0 +1,160 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+
+
+\usepackage[empty]{fullpage}				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textsc{\Huge Anchal Jain } & Email : \href{mailto:anchalj109@gmail.com}{anchalj109@gmail.com}\\
+  \href{http://anchaljain.in}{http://anchaljain.in} & Mobile : +918875753935 \\
+\end{tabular*}
+
+%Section: Work Experience at the top
+\section{Internship}
+\begin{tabular}{r|p{11cm}}
+ \emph{Internship} & MIT-IIT MAKE IN INDIA  \\\textsc{June 2017}&\emph{Bootcamp}\\&\footnotesize{The camp is all about innovation, design thinking, fabrication and entrepreneurship.
+there I learnt Arduino, Sketch Up tool and 3D-printing.}
+\end{tabular}
+
+%Section: Projects
+\section{Projects}
+\begin{tabular}{r|p{11cm}}
+ 
+ \textsc{Dec 2017} &  \href{https://github.com/AnchalJain/careBOT}{ChatBot} \\&\footnotesize{It is a chatbot which is linked with skype. It is just a test to learn how the chat bot works. This is written in node.js and also used microsoft API. And this chatbot can be liked with skype, slack, facebook messenger and other messaging apps.}\\\multicolumn{2}{c}{} \\
+\textsc{July 2017} & \href{https://github.com/AnchalJain/Neopixels}{Neopixels} \\&\footnotesize{It's is Arduino based project. Trying to print "MAKE IN INDIA" on the Neopixels Stick. Using Neopixels library of Arduino. }\\\multicolumn{2}{c}{} \\
+\textsc{Feb 2017} & \href{https://github.com/AnchalJain/Demo-project}{Servo} \\&\footnotesize{This website made for the mozilla new browser servo.It is work better than chrome,
+mozilla and other browser. Mozilla New browser (Servo) is called new genration browser which written on rust and full multi-threaded browser.}\\\multicolumn{2}{c}{} \\
+\textsc{Feb 2017} & \href{https://github.com/AnchalJain/Happy-Birthday}{Happy-Birthday} \\&\footnotesize{This is a animated web application to wish birthday to your dear ones.}\\\multicolumn{2}{c}{} \\
+\textsc{Sep 2016} & \href{https://github.com/AnchalJain/RG-Academy}{RG-Academy} \\&\footnotesize{This is my 2nd year project. An online course registration system in a preparation of competitive exams to take an admission for bachelors degree in Science Maths stream.}
+
+\end{tabular}
+
+\section{Open Source Contribution}
+\begin{tabular}{r|p{11cm}}
+ \ & The Linux Foundation \\\textsc{2015-2016} &\footnotesize{Learned about kernel hacking and did a good contribution in Linux kernel.
+So many patches got accepted and merged into Linux kernel. All accepted patches can be found \href{https://git.kernel.org/cgit/linux/kernel/git/next/linux-next.git/log/?qt=grep&q=Anchal+Jain}{here}.}
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+ \textsc 2014-2018 & Bachelor of Technology in Computer Science, \\
+& Arya College of Engineering and I.T, Rajasthan, India\\
+
+&\normalsize \textsc{Agg}: 69\% \\&\\
+\textsc 2013-2014& Higher Secondary Education  \\&K.D. Jain Public School, Kishangarh, Rajasthan\\
+
+&\normalsize \textsc{Percentage}: 57.6\% \\&\\
+\textsc2011-2012& Secodary Education\\
+& K.D. Jain Public School, Kishangarh, Rajasthan\\
+
+&\textsc{CGPA}: 8.2/10 \\&\\
+
+\end{tabular}
+
+\section{Skills}
+\begin{tabular}{rl}
+ \textsc {Programming -} & C, Javascript, php\\
+  \textsc {Database -} & Mysql and MongoDB \\
+ \textsc {Knowledge -} & NodeJs, REST API, Web Framework, IOT, Git, Ubuntu, RedHat\\
+
+ \textsc {Web -} & HTML, CSS, PhP, Jquery-Animation, Javascript \\
+ 
+
+\end{tabular}
+
+%Section: Scholarships and additional info
+\section{Certification}
+\begin{tabular}{rl}
+ \textsc{Sept.} 2016 & Red Hat Certified System Administrator (RHSCA Ex200)\\
+\textsc{Sept.} 2016 & Red Hat Certified Engineer(RHCE Ex300). 
+\end{tabular}
+
+
+
+
+
+\section{Extra-Circular Activity}
+Conducted Workshop on Open Source Contribution and Linux \\
+Participated in Conf.kde.in 2016 \\
+Coordinated in Thar (University Fest) \\
+Coordinated in Shradhanjali (College Fest) \\
+
+
+\section{Declaration}
+I do hereby declare that the above information is true to the best of my knowledge and in case of any discrepancy I will be held responsible. \\
+
+\null\hfill Anchal Jain
+
+
+\end{document}
